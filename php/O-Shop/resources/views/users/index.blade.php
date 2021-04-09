@@ -28,7 +28,7 @@
                                 <form class="d-inline" action="{{route('users.admin', ['user' => $user->id])}}" method="post">
                                     @csrf
                                     @method('PUT')
-                                    <button type="submit" class="btn">
+                                    <button type="submit" class="btn {{$user->isAdmin() ? 'btn-danger':'btn-success'}} w-50">
                                         {{$user->isAdmin() ? 'Remove as' : 'Set as '}}  Admin
                                     </button>
                                 </form>
