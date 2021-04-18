@@ -23,11 +23,11 @@ Route::put('profile', 'ProfileController@update')->name('profile.update');
 
 Route::resource('carts', 'CartController')->only (['index']);
 Route::resource('orders', 'OrderController')
-                ->only('create', 'store')
-                ->middleware(['verified']);
+                ->only('create', 'store');
+                // ->middleware(['verified']);
 Route::resource('orders.payments', 'OrderPaymentController')
-                ->only('create', 'store')
-                ->middleware(['verified']);
+                ->only('create', 'store');
+                // ->middleware(['verified']);
 
 Route::resource('products.carts', 'ProductCartController')->only(['store', 'destroy']);
 
